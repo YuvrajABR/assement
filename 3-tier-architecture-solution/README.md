@@ -1,1 +1,1 @@
-![Alt text](3-tier-arch.jpg "Optional title")
+![Alt text](3-tier-arch.jpg "3 tier archtecture azure")
