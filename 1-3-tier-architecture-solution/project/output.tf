@@ -7,6 +7,3 @@ output "azurerm_service_name" {
 output "kayvault_name" {
   value = module.secret_management.keyvault_name
 }
-output sqlusername {
-  value       = local.sql_username
-}

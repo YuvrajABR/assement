@@ -55,7 +55,7 @@ module "sql_database" {
   sql_database_name   = local.sql_database_name
   resource_group_name = var.resource_group_name
   location            = local.location
-  sql_username        = local.sql_username
+  sql_username        = var.sql_username
   sql_password        = random_string.random.id
   tags                = local.tags 
 }

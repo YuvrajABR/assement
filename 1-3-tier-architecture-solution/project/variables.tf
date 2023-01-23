@@ -10,12 +10,6 @@ variable "resource_group_name" {
   description = "resource group for resources"
 }
 
-variable "location_code" {
-  type        = string
-  default     = "azus"
-  description = "short name for location"
-}
-
 variable "app_service_plan_os" {
   type        = string
   default     = "Windows"
@@ -26,6 +20,11 @@ variable "sku_name" {
   type        = string
   default     = "S1"
   description = "app service sku"
+}
+variable "sql_username" {
+  type        = string
+  default     = "sqladmin"
+  description = "sql server username"
 }
 
 variable "instance_number" {
