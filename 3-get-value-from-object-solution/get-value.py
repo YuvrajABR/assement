@@ -55,3 +55,9 @@ if __name__ == '__main__':
     input_object = {}
     value = get_nested_object(input_object, 'b')
     print(value)
+
+    # test input  - when provided with objec twith multiple keys
+    # return an exception
+    input_object =  {"x":{"y":{"z":"a"}},"a":{"y":{"z":"a"}}}
+    value = get_nested_object(input_object, 'b')
+    print(value)
