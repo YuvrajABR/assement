@@ -39,10 +39,9 @@ on the outcome but more focusing on the approach, style and reproducibility.
 
 * application logs are logged to appplication insights.
 
+
+### terraform project structure explanation
 ![Alt text](document/tf-folder.jpg "terraform folder structure")
-
-
-#### terraform project structure explanation
 
 * higligted in **red** from above screenshot is terraform modules
     - creating modules for following resources.
