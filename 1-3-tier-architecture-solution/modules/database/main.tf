@@ -21,5 +21,5 @@ resource "azurerm_mssql_database" "sql_database" {
   read_scale     = true
   sku_name       = "S0"
   zone_redundant = true
-  tags = var.tags
+  tags           = var.tags
 }

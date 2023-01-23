@@ -11,6 +11,7 @@ locals {
   keyvault_name         = join("-", [local.location_code[local.location], "kv", var.service_name, var.environment, var.instance_number])
   sql_server_name       = join("-", [local.location_code[local.location], "mssql", var.service_name, var.environment, var.instance_number])
   sql_database_name     = join("-", [local.location_code[local.location], "mssqldb", var.service_name, var.environment, var.instance_number])
+  vnet_name             = join("-", [local.location_code[local.location], "vnet", var.service_name, var.environment, var.instance_number])
   tags = {
     service     = var.service_name
     owner       = var.owner
