@@ -5,7 +5,7 @@ on the outcome but more focusing on the approach, style and reproducibility.
 
 ```
 
-![Alt text](3-tier-arch.jpg "3 tier archtecture azure")
+![Alt text](document/3-tier-arch.jpg "3 tier archtecture azure")
 
 # 3 Tier architecture explanation
 
@@ -22,7 +22,7 @@ on the outcome but more focusing on the approach, style and reproducibility.
 #### Database layer
 * Single sql database server and sql database using sku standard
 
-#### other considerations.
+#### other considerations
 
 #### keyvault :-
 * To store the pasword of azure sql database and for the user to access the sql db.
@@ -38,3 +38,36 @@ on the outcome but more focusing on the approach, style and reproducibility.
     - sql server and database
 
 * application logs are logged to appplication insights.
+
+![Alt text](document/tf-folder.jpg "terraform folder structure")
+
+
+#### terraform project structure explanation
+
+* higligted in **red** from above screenshot is terraform modules
+    - creating modules for following resources.
+        + appservice module - consists configuration for **app service plan and app service**.
+        + database - consists configuration for **sql server and sql db**
+        + secretmanagement -  consists configuration for **keyvault**
+        + each module contains main.tf, variables.tf and output.tf
+
+* higligted in **green** from above screenshot is project folder, where calling modules and creating the resources.
+    - local.tf 
+        + creating resoource names based on example for app sercivce plan
+        + ``` <locationcode> + "asp" + var.service_name + var.environment + var.instance_number ```
+        +  *azus-asp-ardemo-prod-001*
+            - location
+            - location code (shortend location example eastus is azus)
+            - environment (dev, preprod, prod)
+            - resource app service = app, app service plan is asp, keyvault is kv and so on
+            - instance number - a number to identify same kind of resource example :- 001, 002
+    - provider.tf 
+        + defined the provider configuration for azurerm module with subscriptionid as input.
+
+    - main.tf
+        + called all the modules in main.tf creating the resources.
+
+    - variables.tf
+        + defined variables for resuseing the same configuration for other environments.
+    - output.tf
+        + resources are generated dynamically, so sharing the names as ouput.
